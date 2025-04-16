@@ -58,7 +58,7 @@ double distance() {
   return (duration * 0.0343) / 2;
 }
 
-void lcdPrint(int x, int y, String txt) {
+void lcdPrint(int x, int y, const String &text) {
   lcd.setCursor(x, y);
   lcd.print(txt);
 }
