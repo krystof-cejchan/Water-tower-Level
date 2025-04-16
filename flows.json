@@ -1,0 +1,81 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "48aac4f6b0e889cd",
+        "type": "serial in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Read serial from arduino",
+        "serial": "c8e17409f352ebc6",
+        "x": 230,
+        "y": 140,
+        "wires": [
+            [
+                "d30b436b8c890714"
+            ]
+        ]
+    },
+    {
+        "id": "bbaeee7771e620cd",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "mqtt output",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "",
+        "x": 610,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "d30b436b8c890714",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "set payload",
+        "func": "msg.payload = msg\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 140,
+        "wires": [
+            [
+                "bbaeee7771e620cd"
+            ]
+        ]
+    },
+    {
+        "id": "c8e17409f352ebc6",
+        "type": "serial-port",
+        "name": "Read serial from arduino",
+        "serialport": "/tadytodopln",
+        "serialbaud": "115200",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": 10000
+    }
+]
